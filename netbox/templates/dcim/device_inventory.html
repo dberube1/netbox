@@ -24,19 +24,20 @@
                 </tr>
             </table>
         </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <strong>Comments</strong>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>Comments</strong>
+            </div>
+            <div class="panel-body">
+                {% if device.comments  %}
+                    {{ device.comments|gfm }}
+                {% else %}
+                    <span class="text-muted">None</span>
+                {% endif %}
+            </div>
         </div>
-        <div class="panel-body">
-            {% if device.comments  %}
-                {{ device.comments|gfm }}
-            {% else %}
-                <span class="text-muted">None</span>
-            {% endif %}
-        </div>
     </div>
+
     <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-heading">
